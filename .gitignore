@@ -1,4 +1,6 @@
 # Default ignored files
+.gitignore
 .idea/
 *.iml
-META-INF/
+/offer_test/META-INF/
+/offer/out/
