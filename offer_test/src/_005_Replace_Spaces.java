@@ -2,6 +2,19 @@ public class _005_Replace_Spaces {
 
   private static class Solution {
 
+    public static void main(String[] args) {
+      String[] strs = {
+          "We Are Happy.",
+          "Hello world!",
+          "  H  i ."
+      };
+      for (String str : strs) {
+        System.out.println("-------------");
+        System.out.println(String.format("Before: %s, After: %s",
+            str, replaceSpace(new StringBuffer(str))));
+      }
+    }
+
     public static String replaceSpace(StringBuffer str) {
       if (str == null) {
         return null;
@@ -29,19 +42,6 @@ public class _005_Replace_Spaces {
       }
 
       return str.toString();
-    }
-
-    public static void main(String[] args) {
-      String[] strs = {
-          "We Are Happy.",
-          "Hello world!",
-          "  H  i ."
-      };
-      for (String str : strs) {
-        System.out.println("-------------");
-        System.out.println(String.format("Before: %s, After: %s",
-            str, replaceSpace(new StringBuffer(str))));
-      }
     }
   }
 }

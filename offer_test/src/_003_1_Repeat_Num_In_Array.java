@@ -4,6 +4,22 @@ public class _003_1_Repeat_Num_In_Array {
 
   private static class Solution {
 
+    public static void main(String[] args) {
+      int[][] arrays = {
+          {2, 3, 1, 0, 2, 5},
+          {2, 3, 1, 1, 2, 5},
+          {3, 2, 0, 4, 1, 5},
+          {6, 2},
+          {}
+      };
+      for (int[] array : arrays) {
+        System.out.println("array = " + Arrays.toString(array));
+        int[] duplication = new int[]{-1};
+        boolean result = new Solution().duplicate(array, duplication);
+        System.out.println("result = " + result + ", duplication = " + duplication[0]);
+      }
+    }
+
     public boolean duplicate(int[] array, int[] duplication) {
       int n = array.length;
       if (array == null || n == 1) {
@@ -34,22 +50,5 @@ public class _003_1_Repeat_Num_In_Array {
 //      array[i] = array[j];
 //      array[j] = tmp;
 //    }
-
-    public static void main(String[] args) {
-      int[][] arrays = {
-          {2, 3, 1, 0, 2, 5},
-          {2, 3, 1, 1, 2, 5},
-          {3, 2, 0, 4, 1, 5},
-          {6, 2},
-          {}
-      };
-      for (int[] array : arrays) {
-        System.out.println("array = " + Arrays.toString(array));
-        int[] duplication = new int[]{-1};
-        boolean result = new Solution().duplicate(array, duplication);
-        System.out.println("result = " + result + ", duplication = " + duplication[0]);
-      }
-
-    }
   }
 }
