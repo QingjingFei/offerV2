@@ -28,7 +28,7 @@ public class _005_Replace_Spaces {
       }
 
       int i = str.length() - 1, j = i + cnt * 2;
-      str.setLength(j+1);
+      str.setLength(j + 1);
 
       while (i >= 0) {
         if (str.charAt(i) != ' ') {
