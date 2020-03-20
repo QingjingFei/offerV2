@@ -7,14 +7,15 @@ public class _006_Print_List_From_Tail_To_Head {
   private static class Solution {
 
     public static void main(String[] args) {
+      ListNode headNode = new ListNode(0);
       ListNode nextNode = new ListNode(1);
-      ListNode headNode = new ListNode(0, nextNode);
+      headNode.next = nextNode;
       for (int i = 2; i < 10; i++) {
         ListNode node = new ListNode(i);
-        nextNode.setNext(node);
+        nextNode.next = node;
         nextNode = node;
       }
-      ArrayList<Integer> res = printListFromTailToHead_4(headNode);
+      ArrayList<Integer> res = printListFromTailToHead_1(headNode);
       System.out.println(res);
     }
 
