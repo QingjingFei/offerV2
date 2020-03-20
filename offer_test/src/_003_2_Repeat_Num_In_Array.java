@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class _003_2_Repeat_Num_In_Array {
 
-  private static class Solution {
+  public static class Solution {
 
     public static void main(String[] args) {
       int[][] arrays = {

@@ -1,6 +1,6 @@
 public class _005_Replace_Spaces {
 
-  private static class Solution {
+  public static class Solution {
 
     public static void main(String[] args) {
       String[] strs = {

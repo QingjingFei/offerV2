@@ -1,6 +1,6 @@
 public class _004_Find_Element_In_2D_Array {
 
-  private static class Solution {
+  public static class Solution {
 
     public static void main(String[] args) {
       int[][] matrix = {

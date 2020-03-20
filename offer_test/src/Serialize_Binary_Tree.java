@@ -2,7 +2,9 @@ import common.TreeNode;
 
 public class Serialize_Binary_Tree {
 
-  public static void main(String[] args) {
+  public static class Solution {
+
+    public static void main(String[] args) {
     /*
           1
         /   \
@@ -10,29 +12,26 @@ public class Serialize_Binary_Tree {
       /     / \
      4     5   60
      */
-    TreeNode treeNode1 = new TreeNode(1);
-    TreeNode treeNode2 = new TreeNode(2);
-    TreeNode treeNode3 = new TreeNode(3);
-    TreeNode treeNode4 = new TreeNode(4);
-    TreeNode treeNode5 = new TreeNode(5);
-    TreeNode treeNode6 = new TreeNode(60);
+      TreeNode treeNode1 = new TreeNode(1);
+      TreeNode treeNode2 = new TreeNode(2);
+      TreeNode treeNode3 = new TreeNode(3);
+      TreeNode treeNode4 = new TreeNode(4);
+      TreeNode treeNode5 = new TreeNode(5);
+      TreeNode treeNode6 = new TreeNode(60);
 
-    treeNode1.left = treeNode2;
-    treeNode1.right = treeNode3;
+      treeNode1.left = treeNode2;
+      treeNode1.right = treeNode3;
 
-    treeNode2.left = treeNode4;
-    treeNode3.left = treeNode5;
-    treeNode3.right = treeNode6;
+      treeNode2.left = treeNode4;
+      treeNode3.left = treeNode5;
+      treeNode3.right = treeNode6;
 
-    SerializeTree serializeTree = new SerializeTree();
-
-    String str = serializeTree.Serialize(treeNode1);
-    System.out.println(str);
-    TreeNode treeNode = serializeTree.Deserialize(str);
-    System.out.println(treeNode);
-  }
-
-  public static class SerializeTree {
+      Solution serializeTree = new Solution();
+      String str = serializeTree.Serialize(treeNode1);
+      System.out.println(str);
+      TreeNode treeNode = serializeTree.Deserialize(str);
+      System.out.println(treeNode);
+    }
 
     private int index = -1;
 

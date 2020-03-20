@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class _006_Print_List_From_Tail_To_Head {
 
-  private static class Solution {
+  public static class Solution {
 
     public static void main(String[] args) {
       ListNode headNode = new ListNode(0);
