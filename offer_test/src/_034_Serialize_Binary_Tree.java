@@ -1,6 +1,6 @@
 import common.TreeNode;
 
-public class Serialize_Binary_Tree {
+public class _034_Serialize_Binary_Tree {
 
   public static class Solution {
 
@@ -28,34 +28,41 @@ public class Serialize_Binary_Tree {
 
       Solution serializeTree = new Solution();
       String str = serializeTree.Serialize(treeNode1);
-      System.out.println(str);
+      System.out.println("序列化：" + str);
       TreeNode treeNode = serializeTree.Deserialize(str);
-      System.out.println(treeNode);
+      System.out.println("反序列化：" + serializeTree.Serialize(treeNode));
     }
 
-    private int index = -1;
+    /**
+     * 实际上，如果二叉树的序列化是从根节点开始的，
+     * 那么相应的反序列化在根节点的数值读出来的时候就可以开始了。
+     * 因此，我们可以根据前序遍历的顺序来序列化二叉树。
+     * 后序遍历在反序列化的时候要修改为从后往前读序列。
+     * 中序遍历、层次遍历均不能达此效果。
+     */
+    private int idx = -1;
 
     String Serialize(TreeNode root) {
       if (root == null) {
         return "#";
       } else {
-        return root.val + "!" + Serialize(root.left) + "!" + Serialize(root.right);
+        return Serialize(root.left) + "!" + Serialize(root.right) + "!" + root.val;
       }
     }
 
     TreeNode Deserialize(String str) {
       String[] s = str.split("!");  // 将序列化之后的序列用"!"分隔符转化为数组
-      index++;  // 索引每次加一
-      int len = s.length;
-      if (index > len) {
-        return null;
-      }
-      TreeNode treeNode = null;
-      if (!s[index].equals("#")) {  // 不是叶子节点，继续走；是叶子节点，出递归
-        treeNode = new TreeNode(Integer.parseInt(s[index]));
-        treeNode.left = Deserialize(str);
-        treeNode.right = Deserialize(str);
-      }
+      idx = s.length;
+      TreeNode treeNode = helpDeserialize(s);
+      return treeNode;
+    }
+
+    TreeNode helpDeserialize(String[] s) {
+      idx--;
+      if (s[idx].equals("#")) return null;
+      TreeNode treeNode = new TreeNode(Integer.parseInt(s[idx]));
+      treeNode.right = helpDeserialize(s);
+      treeNode.left = helpDeserialize(s);
       return treeNode;
     }
   }
