@@ -20,7 +20,7 @@ public class _007_Rebuild_Tree_By_Preorder_Inorder_Seq {
       int[] in = {4, 7, 2, 1, 5, 3, 8, 6};
       Solution rebuild = new Solution();
       TreeNode root = rebuild.reConstructBinaryTree(pre, in);
-      ArrayList<ArrayList<Integer>> res = root.print(root);
+      ArrayList<ArrayList<Integer>> res = root.print();
       System.out.println(res);
     }
 
